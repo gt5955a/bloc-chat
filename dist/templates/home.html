@@ -1,5 +1,19 @@
-<h1>Home Page</h1>
+<h1>Bloc Chat</h1>
 
-<div ng-repeat="room in rooms">
-    <p>{{ room.$value }}</p>
+<div ng-controller="RoomCtrl">
+    <button type="button" class="btn btn-primary" ng-click="open()">
+        Create Room
+    </button>
 </div>
+
+<div>
+    <ul>
+        <li ng-repeat="room in rooms">
+            {{ room.$value }}
+        </li>
+    </ul>
+</div>
+
+<!-- <pre><code>
+    {{rooms}}
+</code></pre> -->
