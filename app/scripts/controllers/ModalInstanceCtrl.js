@@ -6,7 +6,7 @@
         
         $scope.addRoom = function() {
             var newRoom = $scope.newRoomObject.roomTitle;
-            Room.addRoom(newRoom);
+            Room.newRoom(newRoom);
         };
     }
     

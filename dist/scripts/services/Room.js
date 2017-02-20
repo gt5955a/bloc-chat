@@ -4,14 +4,15 @@
         var rooms = $firebaseArray(ref);
         
         function addRoom(room) {
+            console.log(rooms);
             rooms.$add({
-                name: room
+                $value: room
             });
         }
         
         return {
             all: rooms,
-            new: addRoom
+            newRoom: addRoom
         };
     }
     

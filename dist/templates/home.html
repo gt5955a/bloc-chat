@@ -1,11 +1,13 @@
 <h1>Bloc Chat</h1>
 
+<!-- Creat Room -->
 <div ng-controller="RoomCtrl">
     <button type="button" class="btn btn-primary" ng-click="open()">
         Create Room
     </button>
 </div>
 
+<!-- List of Rooms -->
 <div>
     <ul>
         <li ng-repeat="room in rooms">
@@ -15,5 +17,5 @@
 </div>
 
 <!-- <pre><code>
-    {{rooms}}
+    {{rooms.$value}}
 </code></pre> -->
