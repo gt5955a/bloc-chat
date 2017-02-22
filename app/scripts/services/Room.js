@@ -4,15 +4,20 @@
         var rooms = $firebaseArray(ref);
         
         function addRoom(room) {
-            console.log(rooms);
+        //  console.log(rooms);
             rooms.$add({
                 $value: room
             });
         }
         
+        function getMessages(roomId) {
+            return $firebaseArray(firebase.database().ref().child("messages").orderByChild("roomId").equalTo(roomId));
+        }
+        
         return {
             all: rooms,
-            newRoom: addRoom
+            newRoom: addRoom,
+            getMessages: getMessages
         };
     }
     
