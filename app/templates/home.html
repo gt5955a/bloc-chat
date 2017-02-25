@@ -10,20 +10,19 @@
 <!-- List of Rooms -->
 <div>
     <ul>
-        <li ng-repeat="room in rooms">
+        <li ng-repeat="room in rooms" ng-click="selectRoom(room)">
             {{ room.$value }}
         </li>
     </ul>
 </div>
 
-<pre><code>
+
 <div>
-    <h3>{{ selectedRoom.name }}</h3>
-    <p ng-repeat="message in messages">
-    <strong>{{ message.username }}:</strong> {{ message.content }}
+    <h3>{{ currentRoom.$value }}</h3>
+    <p ng-repeat="message in currentMessages">
+        <strong>{{ message.username }}:</strong> {{ message.content }}
     </p>
 </div>
-</code></pre>
 
 <!-- <pre><code>
     {{rooms.$value}}

@@ -3,8 +3,9 @@
         $scope.rooms = Room.all;
         
         $scope.selectRoom = function(room) {
+            $scope.currentRoom = room;
             var selectedRoom = room.$id;
-            Room.getMessages(selectedRoom);
+            $scope.currentMessages = Room.getMessages(selectedRoom);
         };
     }
     
