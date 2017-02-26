@@ -4,7 +4,9 @@
         if (!currentUser || currentUser === '') {
             $uibModal.open({
                 templateUrl: '/templates/username.html',
-                controller: 'ModalInstanceCtrl'
+                controller: 'ModalInstanceCtrl',
+                backdrop: 'static',
+                keyboard: false
             });
         };
     }

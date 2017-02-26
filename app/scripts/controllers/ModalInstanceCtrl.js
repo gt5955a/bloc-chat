@@ -1,5 +1,5 @@
 (function() {
-    function ModalInstanceCtrl($scope, $uibModalInstance, Room) {
+    function ModalInstanceCtrl($scope, $uibModalInstance, $cookies, Room) {
         $scope.newRoomObject = {
             roomTitle: ''
         };
@@ -14,12 +14,11 @@
         };
         
         $scope.createUsername = function() {
-            var newUsername = $scope.newUsernameObject.userName;
-            $scope.currentUsername = Room.newUsername(newUsername);
+            $cookies.blocChatCurrentUser = $scope.newUsernameObject.userName;
         };
     }
     
     angular
         .module('blocChat')
-        .controller('ModalInstanceCtrl', ['$scope', '$uibModalInstance', 'Room', ModalInstanceCtrl]);
+        .controller('ModalInstanceCtrl', ['$scope', '$uibModalInstance', '$cookies', 'Room', ModalInstanceCtrl]);
 })();
