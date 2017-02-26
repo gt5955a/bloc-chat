@@ -14,10 +14,17 @@
             return $firebaseArray(firebase.database().ref().child("messages").orderByChild("roomId").equalTo(roomId));
         }
         
+        function createUsername(username) {
+            rooms.$add({
+                $value: username
+            });
+        }
+        
         return {
             all: rooms,
             newRoom: addRoom,
-            getMessages: getMessages
+            getMessages: getMessages,
+            createUsername: createUsername
         };
     }
     
