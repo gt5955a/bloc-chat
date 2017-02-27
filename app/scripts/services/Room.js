@@ -15,6 +15,7 @@
         }
         
         function createUsername(username) {
+            // console.log(username);
             rooms.$add({
                 $value: username
             });

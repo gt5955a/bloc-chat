@@ -14,7 +14,8 @@
         };
         
         $scope.createUsername = function() {
-            $cookies.blocChatCurrentUser = $scope.newUsernameObject.userName;
+            $cookies.put('blocChatCurrentUser', $scope.newUsernameObject.userName);
+            $uibModalInstance.close();
         };
     }
     
