@@ -5,7 +5,7 @@
         $scope.selectRoom = function(room) {
             $scope.currentRoom = room;
             var selectedRoom = room.$id;
-            $scope.currentMessages = Message.getMessages(selectedRoom);
+            $scope.currentMessages = Message.getByRoomId(selectedRoom);
         };
     }
     
