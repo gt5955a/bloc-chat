@@ -7,7 +7,7 @@
     </button>
 </div>
 
-<!-- List of Rooms -->
+<!-- List Rooms -->
 <div>
     <ul>
         <li ng-repeat="room in rooms" ng-click="selectRoom(room)">
@@ -16,13 +16,19 @@
     </ul>
 </div>
 
-
+<!-- Show Current Room -->
 <div>
     <h3>{{ currentRoom.$value }}</h3>
     <p ng-repeat="message in currentMessages">
         <strong>{{ message.username }}:</strong> {{ message.content }}
     </p>
 </div>
+
+<!-- Send Messages -->
+<form id="submit" ng-submit="sendMessage()">
+    <input ng-model="newMessage" />
+    <button type="submit">Send Message</button>
+</form>
 
 <!-- <pre><code>
     {{rooms.$value}}

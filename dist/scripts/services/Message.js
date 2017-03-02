@@ -5,7 +5,15 @@
                 var ref = firebase.database().ref().child("messages").orderByChild("roomId").equalTo(roomId);
                 return $firebaseArray(ref);
             },
-            // sendMessages: sendMessages
+            send: function(newMessage, roomId) {
+                var ref = firebase.database().ref().child("messages").orderByChild("roomId").equalTo(roomId);
+                return $firebaseArray(ref).$add({
+                    username: $cookies.blocChatCurrentUser,
+                    content: newMessage,
+                    sentAt: Date.now(),
+                    roomId: roomId
+                });
+            }
         };
     }
     
