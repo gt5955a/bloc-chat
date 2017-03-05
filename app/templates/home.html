@@ -25,7 +25,7 @@
 </div>
 
 <!-- Send Messages -->
-<form id="submit" ng-submit="sendMessage()">
+<form id="submit" ng-submit="sendMessage(currentRoom)">
     <input ng-model="newMessage" />
     <button type="submit">Send Message</button>
 </form>
