@@ -8,10 +8,23 @@
                 $value: room
             });
         }
+
+        // function getMessages(roomId) {
+        //    return // $firebaseArray(firebase.database().ref().child("messages").orderByChild("roomId").equalTo(roomId));
+        // }
+        
+        function createUsername(username) {
+            // console.log(username);
+            rooms.$add({
+                $value: username
+            });
+        }
         
         return {
             all: rooms,
-            newRoom: addRoom
+            newRoom: addRoom,
+            // getMessages: getMessages,
+            createUsername: createUsername
         };
     }
     

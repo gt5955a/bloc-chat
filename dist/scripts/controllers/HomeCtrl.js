@@ -8,14 +8,12 @@
             $scope.currentRoom = room;
             var selectedRoom = room.$id;
             $scope.currentMessages = Message.getByRoomId(selectedRoom);
-            $scope.sendMessage = Message.send($scope.newMessage, selectedRoom);
         };
         
         // Send Message
-        //$scope.sendMessage = function(room) {
-            //$scope.currentRoom = room;
-            //Message.send($scope.newMessage, room.$id);
-        //};
+        $scope.sendMessage = function(room) {
+            Message.send($scope.newMessage, room.$id);
+        };
     }
     
     angular
