@@ -7,12 +7,12 @@
         $scope.selectRoom = function(room) {
             $scope.currentRoom = room;
             var selectedRoom = room.$id;
-            $scope.currentMessages = Message.getByRoomId(selectedRoom);
+            $scope.currentMessages = Room.getByRoomId(selectedRoom);
         };
         
         // Send Message
         $scope.sendMessage = function(room) {
-            Message.send($scope.newMessage, room.$id);
+            Message.send($scope.newMessage, $scope.currentRoom.$id);
         };
     }
     

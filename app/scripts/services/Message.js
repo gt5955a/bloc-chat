@@ -1,12 +1,11 @@
 (function() {
     function Message($firebaseArray, $cookies, Room) {
-        var ref = firebase.database().ref().child("messages");
-        var allMessages = $firebaseArray(ref);
+        var ref = firebase.database().ref();
+        var allMessages = $firebaseArray(ref.child("messages"));
         
-        function getByRoomId(roomId) {
-            var ref = firebase.database().ref().child("messages").orderByChild("roomId").equalTo(roomId);
-            return $firebaseArray(ref);
-        }
+        //function getByRoomId(roomId) {
+        //    return $firebaseArray(allMessages.orderByChild("roomId").equalTo(roomId));
+        //}
         
         function send(newMessage, roomId) {
             allMessages.$add({
@@ -18,7 +17,7 @@
         }
         
         return {
-            getByRoomId: getByRoomId,
+            //getByRoomId: getByRoomId,
             send: send
         };
     }
