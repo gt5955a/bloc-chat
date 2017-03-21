@@ -9,7 +9,7 @@
         
         function send(newMessage, roomId) {
             allMessages.$add({
-                username: $cookies.blocChatCurrentUser,
+                username: $cookies.get('blocChatCurrentUser'),
                 content: newMessage,
                 sentAt: Date.now(),
                 roomId: roomId
